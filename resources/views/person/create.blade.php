@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     
-                       <h3 class="font-demibold pb-5">Add a new person</h3>
+                       <h3 class="font-semibold pb-5">Add a new person</h3>
                        <form action="{{route('person.store')}}" method="POST">
                                @csrf
 

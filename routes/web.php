@@ -33,7 +33,7 @@ Route::controller(PersonController::class)->prefix('person')->name('person')->mi
      Route::get('/create','create')->name('.create');
      Route::post('/store','store')->name('.store');
      Route::get('/{person}/edit','edit')->name('.edit');
-     Route::put('/{person}/update','update')->name('.update');
+     Route::post('/{person}/update','update')->name('.update');
      Route::delete('/{person}/destroy','destroy')->name('.destroy');
 });
 
