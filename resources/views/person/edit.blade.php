@@ -10,26 +10,26 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     
-                       <h3 class="font-demibold pb-5">Add a new person</h3>
-                       <form action="{{route('person.store')}}" method="POST">
+                       <h3 class="font-demibold pb-5">Edit a person: {{$person->firstname}} {{$person->lastname}}</h3>
+                       <form action="{{route('person.update',$person->id)}}" method="POST">
                                @csrf
 
                                 <div class="grid grid-cols-1 sm:grid-cols-6 gap-x-6 gap-y-6">
                                     <span class="sm:col-span-3">
                                        <label class="block" for="firstname">First name</label>
-                                       <input class="block w-full" type="text" name="firstname" id="firstname" value="{{old('firstname')}}">
+                                       <input class="block w-full" type="text" name="firstname" id="firstname" value="{{old('firstname',$person->firstname)}}">
                                     </span>
                                     <span class="sm:col-span-3">
                                        <label class="block" for="lastname">Last name</label>
-                                       <input class="block w-full" type="text" name="lastname" id="lastname" value="{{old('lastname')}}">
+                                       <input class="block w-full" type="text" name="lastname" id="lastname" value="{{old('lastname',$person->lastname)}}">
                                     </span>
                                     <span class="sm:col-span-3">
                                        <label class="block" for="lastname">Email</label>
-                                       <input class="block w-full" type="text" name="email" id="email" value="{{old('email')}}">
+                                       <input class="block w-full" type="text" name="email" id="email" value="{{old('email',$person->email)}}">
                                     </span>
                                     <span class="sm:col-span-3">
                                        <label class="block" for="lastname">Phone</label>
-                                       <input class="block w-full" type="text" name="phone" id="phone" value="{{old('phone')}}">
+                                       <input class="block w-full" type="text" name="phone" id="phone" value="{{old('phone',$person->phone)}}">
                                     </span>
                                 </div>
 
@@ -38,6 +38,17 @@
                             <button class="bg-blue-600 text-white py-2 px-3 rounded-full " type="submit">Save</button>
                          </div>
                        </form>
+                        <form action="{{route('person.destroy',$person->id)}}" method="POST">
+                            @csrf
+                            @method('DELETE')
+
+                            <div class="bg-red-200  mt-6 p-6">
+                                <h3 class="font-semibold">Danger Zone</h3>
+                                <p>You can delete this person here</p>
+                             <center><button class="rounded-full bg-blue-600 p-2 font-bold text-white" type="submit">DELETE</button></center>   
+                            </div>
+
+                        </form>
                 </div>
             </div>
         </div>
