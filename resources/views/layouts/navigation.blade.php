@@ -40,7 +40,7 @@
                         {{ __('People') }}
                     </x-dropdown-link>
 
-                    <x-dropdown-link :href="route('person.index')">
+                    <x-dropdown-link :href="route('business.index')">
                     {{ __('Businesses') }}
                     </x-dropdown-link>
 
