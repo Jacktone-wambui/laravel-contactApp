@@ -11,7 +11,7 @@
                 <div class="p-6 text-gray-900">
                     
                     <div >
-                        <a class="bg-blue-600  text-white rounded-full py-3 px-2 flex justify-end" href="{{route('person.create')}}">Add Person</a>
+                        <a class="bg-blue-600 text-white rounded-full py-2 px-3 absolute right-20" href="{{route('person.create')}}">Add Person</a>
                     <div>
 
                    <table class="table-fixed border-separate border-spacing-6">

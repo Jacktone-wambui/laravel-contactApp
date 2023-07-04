@@ -56,8 +56,10 @@
                             <div class="bg-red-200  mt-6 p-6">
                                 <h3 class="font-semibold">Danger Zone</h3>
                                 <p>You can delete this person here</p>
-                             <center><button class="rounded-full bg-blue-600 p-2 font-bold text-white" type="submit">DELETE</button></center>   
+                            <div class="flex justify-center">
+                                <button class="rounded-full bg-red-600 p-2 font-bold text-white" type="submit">DELETE</button>  
                             </div>
+                        </div>
 
                         </form>
                 </div>
