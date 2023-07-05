@@ -11,8 +11,14 @@ class Business extends Model
 {
     use HasFactory,SoftDeletes;
 
+    // protected $with = ['people'];
+
     public function people()
     {
         return $this->hasMany(Person::class);
+    }
+    public function peoples()
+    {
+        return $this->belongsTo(Person::class);
     }
 }

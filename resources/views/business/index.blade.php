@@ -19,6 +19,7 @@
                         <tr>
                             <th>Business Name</th>
                             <th>Business Email</th>
+                            <th>Person</th>
                             <th>Actions</th>
                             
                         </tr>
@@ -28,6 +29,7 @@
                           <tr>
                             <td>{{$business->business_name}}</td>
                             <td>{{$business->contact_email}}</td>
+                            <td>{{$business->person?->firstname}}</td>
                             <td>
                             <a href="{{route('business.edit',$business->id)}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">

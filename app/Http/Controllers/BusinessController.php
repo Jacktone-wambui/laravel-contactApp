@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Business;
+use App\Models\Person;
 use Illuminate\Http\Request;
 
 class BusinessController extends Controller
@@ -23,7 +24,7 @@ class BusinessController extends Controller
     public function create()
     {
         //
-        return view('business.create');
+        return view('business.create')->with('people',Person::all());
     }
 
     /**
@@ -40,6 +41,7 @@ class BusinessController extends Controller
       $business = new business;
       $business->business_name=$request->input('business_name');
       $business->contact_email=$request->input('contact_email');
+      $business->person_id=$request->input('person_id');
       $business->save();
         
       return redirect(route('business.index'));  
@@ -59,8 +61,7 @@ class BusinessController extends Controller
     public function edit(Business $business)
     {
         //
-        $business = Business::all();
-        return view('business.edit')->with('business',$business);
+        return view('business.edit')->with(['business'=>$business,'people'=>Person::all()]);
     }
 
     /**
@@ -69,6 +70,18 @@ class BusinessController extends Controller
     public function update(Request $request, Business $business)
     {
         //
+           //
+           $validated = $request->validate([
+            'business_name'=>'required',
+            'contact_email'=>'nullable|email',
+      ]);
+
+      $business->business_name=$request->input('business_name');
+      $business->contact_email=$request->input('contact_email');
+      $business->person_id=$request->input('person_id');
+      $business->save();
+        
+      return redirect(route('business.index')); 
     }
 
     /**
@@ -77,5 +90,7 @@ class BusinessController extends Controller
     public function destroy(Business $business)
     {
         //
+        $business->delete();
+        return redirect(route('business.index'));
     }
 }

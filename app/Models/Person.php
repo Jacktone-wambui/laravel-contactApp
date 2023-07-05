@@ -16,4 +16,9 @@ class Person extends Model
     {
         return $this->belongsTo(Business::class);
     }
+    public function businesses()
+    {
+        return $this->hasMany(Business::class);
+    }
+
 }
