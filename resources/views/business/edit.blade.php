@@ -13,6 +13,13 @@
                        <h3 class="font-semibold pb-5">Edit business: {{$business->business_name}}</h3>
                        <form action="{{route('business.update',$business->id)}}" method="POST">
                                @csrf
+                               @if($errors->any())
+                                    <ul>
+                                  @foreach($errors->all() as $error)
+                                      <li class="bg-red-600">{{$error}}</li>
+                                  @endforeach
+                                  </ul>
+                               @endif
 
                                 <div class="grid grid-cols-1 sm:grid-cols-6 gap-x-6 gap-y-6">
                                     <span class="sm:col-span-3">

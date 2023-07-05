@@ -13,6 +13,16 @@ class Business extends Model
 
     // protected $with = ['people'];
 
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'business_name',
+        'contact_email',
+    ];
+
     public function people()
     {
         return $this->hasMany(Person::class);
