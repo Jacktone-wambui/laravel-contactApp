@@ -31,7 +31,7 @@ class Business extends Model
     {
         return $this->belongsTo(Person::class);
     }
-    public function category()
+    public function categories()
     {
         return $this->belongsToMany(BusinessCategory::class,'category_has_business');
     }
