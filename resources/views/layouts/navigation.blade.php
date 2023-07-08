@@ -18,6 +18,9 @@
                     <x-nav-link :href="route('person.index')" :active="request()->routeIs('person*')">
                         {{ __('People') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('person.index')" :active="request()->routeIs('person*')">
+                        {{ __('Tasks') }}
+                    </x-nav-link>
 
 
                     <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -43,8 +46,6 @@
                     <x-dropdown-link :href="route('business.index')">
                     {{ __('Businesses') }}
                     </x-dropdown-link>
-
-                    
 
                     </x-slot>
                 </x-dropdown>

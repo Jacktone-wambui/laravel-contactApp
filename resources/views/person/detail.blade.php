@@ -27,13 +27,25 @@
                         <a class="bg-blue-600 text-white py-2 px-3 rounded-full" href="">Edit Person</a> 
                      </div>
                 </div>
+                <div class="sm:col-span-3">
+                    <h3 class="font-semibold text-l ">Create a new task</h3>
+                    <label class="block" for="title">Task title</label>
+                    <input type="text" class="block w-full" name="title" id="title">
+                    <label class="block" for="title">Task description</label>
+                    <input type="text" class="block w-full" name="description" id="description">
+
+                    <button type="submit" class="bg-blue-600 mt-3 rounded-full p-2 text-white absolute right-20">Create Task</button>
+                    
+                </div>
                     <div class="sm:col-span-3">
-                        <h3 class="font-semibold text-l pb-5">Tasks</h3>
+                        <h3 class="font-semibold text-l pb-3">Tasks</h3>
                         @foreach($person->tasks as $task)
                         <h4 class="font-semibold">{{$task->title}}</h4>
                         <p>{{$task->description}}</p>
                         <p>Status={{$task->status}}</p>
                         @endforeach
+
+                        <button class="bg-blue-600 rounded-full p-2 text-white">Complete Task</button>
                     </div>
                 </div>
                 </div>
