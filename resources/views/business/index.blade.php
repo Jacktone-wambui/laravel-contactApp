@@ -20,6 +20,7 @@
                             <th>Business Name</th>
                             <th>Business Email</th>
                             <th>Categories</th>
+                            <th>Tags</th>
                             <th>Person</th>
                             <th>Actions</th>
                             
@@ -35,6 +36,12 @@
                                 {{$cat->category_name}}
                                 @endforeach
                             </td>
+                            <td>
+                                @foreach($business->tags as $tag)
+                                {{$tag->tag_name}}
+                                @endforeach
+                            </td>
+                            <td>
                             <td>{{$business->person?->firstname}}</td>
                             <td>
                             <a href="{{route('business.edit',$business->id)}}">
