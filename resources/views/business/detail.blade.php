@@ -42,16 +42,27 @@
                     
                     
                     <div class="mt-5 items-center justify-end gap-x-6">
-                        <button type="submit" class="bg-blue-600 mt-3 rounded-full p-2 text-white absolute right-20">Create Task</button>
+                        <button type="submit" class="flex items-center justify-end bg-blue-600 mt-3 rounded-full p-2 text-white">Create Task</button>
                     </div>
                 </form>
                 </div>
                     <div class="sm:col-span-3">
                         <h3 class="font-semibold text-l pb-5">Tasks</h3>
                         @foreach($business->tasks as $task)
-                        <h4 class="font-semibold">{{$task->title}}</h4>
-                        <p>{{$task->description}}</p>
-                        <p>Status={{$task->status}}</p>
+                        <div class="border-t border-grey-500 py-3">
+                               <h4 class="font-semibold">{{$task->title}}</h4>
+                                <p>{{$task->description}}</p>
+                                @if($task->status="open")
+                                    <div class="pt-3">
+                                        <form action="{{route('task.complete',$task->id)}}" method="POST">
+                                            @csrf
+                                            <button class="bg-blue-600 rounded-full p-2 text-white">Complete Task</button>
+                                        </form>
+                                    </div>
+                                    @else
+                                         <p class="italic">Completed</p>
+                                         @endif
+                          </div>
                         @endforeach
                     </div>
                 </div>
