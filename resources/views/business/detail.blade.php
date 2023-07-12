@@ -25,13 +25,26 @@
         </div>
         <div class="sm:col-span-3">
                     <h3 class="font-semibold text-l ">Create a new task</h3>
-                    <label class="block" for="title">Task title</label>
-                    <input type="text" class="block w-full" name="title" id="title">
-                    <label class="block" for="title">Task description</label>
-                    <input type="text" class="block w-full" name="description" id="description">
-
-                    <button type="submit" class="bg-blue-600 mt-3 rounded-full p-2 text-white absolute right-20">Create Task</button>
+                <form action="{{route('task.store')}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="taskable_id" value="{{$business->id}}">
+                    <input type="hidden" name="target_model" value="business">
+                    <div class="grid grid-cols-1 sm:grid-cols-6 gap-y-6">
+                        <span class="sm:col-span-6">
+                            <label class="block" for="title">Task title</label>
+                            <input type="text" class="block w-full" name="title" id="title" value="{{old('title')}}">
+                        </span>
+                        <span class="sm:col-span-6">
+                           <label class="block" for="title">Task description</label>
+                           <input type="text" class="block w-full" name="description" id="description" value="{{old('description')}}">
+                        </span>
+                    </div>
                     
+                    
+                    <div class="mt-5 items-center justify-end gap-x-6">
+                        <button type="submit" class="bg-blue-600 mt-3 rounded-full p-2 text-white absolute right-20">Create Task</button>
+                    </div>
+                </form>
                 </div>
                     <div class="sm:col-span-3">
                         <h3 class="font-semibold text-l pb-5">Tasks</h3>
