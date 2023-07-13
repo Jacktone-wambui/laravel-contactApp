@@ -25,7 +25,7 @@
                       @foreach($task as $task)
                           <tr>
                             <td>{{$task->title}}</td>
-                            <td>{{$task->person_id}}</td>
+                            <td>{{$task->person?->person_id}}</td>
                             <td>{{$task->status}}</td>
                             <td>
                             <a class="bg-blue-600 rounded-full text-white p-2" href="">Complete Task</a>

@@ -42,7 +42,7 @@
                                 @endforeach
                             </td>
                             <td>
-                            <td>{{$business->person?->firstname}}</td>
+                            <td>{{$business->person?->person_id}}</td>
                             <td>
                             <a href="{{route('business.edit',$business->id)}}">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
