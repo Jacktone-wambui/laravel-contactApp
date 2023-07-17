@@ -29,10 +29,6 @@ class Business extends Model
     {
         return $this->hasMany(Person::class);
     }
-    public function peoples()
-    {
-        return $this->belongsTo(Person::class);
-    }
     public function categories()
     {
         return $this->belongsToMany(BusinessCategory::class,'category_has_business');

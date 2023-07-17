@@ -15,7 +15,7 @@ class BusinessController extends Controller
     public function index()
     {
         //
-        $business = Business::all();
+        $business = Business::with('people')->get();
         return view('business.index')->with('business',$business);
     }
 

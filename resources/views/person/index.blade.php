@@ -10,9 +10,9 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     
-                    <div >
+                    <div class="flex justify-end" >
                         <a class="bg-blue-600 text-white rounded-full py-2 px-3" href="{{route('person.create')}}">Add Person</a>
-                    <div>
+                   </div>
 
                    <table class="table-fixed border-separate border-spacing-6">
                       <thead>
@@ -32,10 +32,11 @@
                             <td>{{$person->email}}</td>
                             <td>{{$person->phone}}</td>
                             <td class="{{($person->business?->deleted_at)?'italic':'non-italic'}}">{{$person->business?->business_name}}</td>
-                            <td class="bg-purple-200">
-                                @foreach($person->tags as $tag)
-                                {{$tag->tag_name}}
+                            <td>
+                                <ul>@foreach($person->tags as $tag)
+                              <li>{{$tag->tag_name}}</li>  
                                 @endforeach
+                                </ul>
                             </td>
                             <td>
                             <a href="{{route('person.edit',$person->id)}}">
