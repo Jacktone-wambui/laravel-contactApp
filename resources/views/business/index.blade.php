@@ -36,7 +36,7 @@
                                 {{$cat->category_name}}
                                 @endforeach
                             </td>
-                            <td>
+                            <td class="bg-purple-200">
                                 @foreach($business->tags as $tag)
                                 {{$tag->tag_name}}
                                 @endforeach
