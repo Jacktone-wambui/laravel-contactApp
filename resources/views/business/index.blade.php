@@ -29,7 +29,7 @@
                             <tbody>
                                 @foreach($business as $business)
                                 <tr class="hover:bg-gray-100 border-b border-gray-300">
-                                    <td class="w-1/4 px-4 py-2">{{ $business->business_name }}</td>
+                                    <td class="w-1/4 px-4 py-2"><a href="{{route('business.show',$business->id)}}">{{ $business->business_name }}</a></td>
                                     <td class="w-1/4 px-4 py-2">
                                         <div class="truncate">{{ $business->contact_email }}</div>
                                     </td>
