@@ -23,10 +23,11 @@
                           <tr>
                             <td>{{$task->title}}</td>
                             <td>
-                               <ul>
-                                    
-                                   
-                                </ul>
+                                @if ($task->person == 'App\Person')
+                                    {{ $task->person->firstname }}
+                                @elseif ($task->business == 'App\Business')
+                                    {{ $task->business->business_name }}
+                                @endif
                             </td>
                             <td class="bg-green-600  text-white pl-1 rounded-bottom">{{$task->status}}</td>
                             <td>
