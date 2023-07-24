@@ -22,7 +22,13 @@
                       @foreach($task as $task)
                           <tr>
                             <td>{{$task->title}}</td>
-                            <td>{{ $task->taskable_type }} ({{ $task->taskable_id }})</td>
+                            <td>
+                            @if ($task->taskable_type == 'App\Models\Person')
+                                {{ $task->taskable->firstname }}
+                            @else ($task->taskable_type == 'App\Models\Business')
+                                {{ $task->taskable->business_name }}
+                            @endif
+                        </td>
                             <td class="bg-green-600  text-white pl-1 rounded-bottom">{{$task->status}}</td>
                             <td>
                             <form action="{{route('task.complete',$task->id)}}" method="GET">
