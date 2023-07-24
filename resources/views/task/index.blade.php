@@ -22,16 +22,14 @@
                       @foreach($task as $task)
                           <tr>
                             <td>{{$task->title}}</td>
-                            <td>
-                                @if ($task->person == 'App\Person')
-                                    {{ $task->person->firstname }}
-                                @elseif ($task->business == 'App\Business')
-                                    {{ $task->business->business_name }}
-                                @endif
-                            </td>
+                            <td>{{ $task->taskable_type }} ({{ $task->taskable_id }})</td>
                             <td class="bg-green-600  text-white pl-1 rounded-bottom">{{$task->status}}</td>
                             <td>
-                            <a class="bg-blue-600 rounded-full text-white p-2" href="">Complete Task</a>
+                            <form action="{{route('task.complete',$task->id)}}" method="GET">
+                                @csrf
+                                @method ('PUT')
+                                <button class="bg-blue-600 rounded-full p-1 text-white" type="submit" class="btn btn-primary">Mark as Completed</button>
+                            </form>
                             </td>
                           </tr>
                           @endforeach

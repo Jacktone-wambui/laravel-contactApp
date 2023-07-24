@@ -58,14 +58,14 @@
                                 <p>{{$task->description}}</p>
                                 @if($task->status="open")
                                     <div class="pt-3">
-                                        <form action="{{route('task.complete',$task->id)}}" method="POST">
+                                        <form action="{{route('task.complete',$task->id)}}" method="GET">
                                             @csrf
                                             <button class="bg-blue-600 rounded-full p-2 text-white">Complete Task</button>
                                         </form>
                                     </div>
                                     @else
                                          <p class="italic">Completed</p>
-                                         @endif
+                                @endif
                           </div>
                         @endforeach
                           </div>
