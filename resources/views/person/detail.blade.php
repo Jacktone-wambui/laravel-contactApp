@@ -56,6 +56,7 @@
                           <div class="border-t border-grey-500 py-3">
                                <h4 class="font-semibold">{{$task->title}}</h4>
                                 <p>{{$task->description}}</p>
+                                
                                 @if($task->status="open")
                                     <div class="pt-3">
                                         <form action="{{route('task.complete',$task->id)}}" method="GET">
@@ -64,8 +65,9 @@
                                         </form>
                                     </div>
                                     @else
-                                         <p class="italic">Completed</p>
+                                         <p class="italic font-semibold">Completed</p>
                                 @endif
+                                
                           </div>
                         @endforeach
                 </div>
