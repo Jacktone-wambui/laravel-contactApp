@@ -52,15 +52,15 @@
                         <div class="border-t border-grey-500 py-3">
                                <h4 class="font-semibold">{{$task->title}}</h4>
                                 <p>{{$task->description}}</p>
-                                @if($task->status="open")
+                                @if($task->status=="open")
                                     <div class="pt-3">
-                                        <form action="{{route('task.complete',$task->id)}}" method="POST">
+                                        <form action="{{route('task.complete',$task->id)}}" method="get">
                                             @csrf
                                             <button class="bg-blue-600 rounded-full p-2 text-white">Complete Task</button>
                                         </form>
                                     </div>
                                     @else
-                                         <p class="italic">Completed</p>
+                                         <p class="italic text-pink-400">Completed</p>
                                          @endif
                           </div>
                         @endforeach

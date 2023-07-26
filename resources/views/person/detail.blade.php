@@ -57,15 +57,15 @@
                                <h4 class="font-semibold">{{$task->title}}</h4>
                                 <p>{{$task->description}}</p>
                                 
-                                @if($task->status="open")
+                                @if($task->status=="open")
                                     <div class="pt-3">
-                                        <form action="{{route('task.complete',$task->id)}}" method="GET">
+                                        <form action="{{route('task.complete',$task->id)}}" method="get">
                                             @csrf
                                             <button class="bg-blue-600 rounded-full p-2 text-white">Complete Task</button>
                                         </form>
                                     </div>
                                     @else
-                                         <p class="italic font-semibold">Completed</p>
+                                         <p class="italic text-pink-400">Completed</p>
                                 @endif
                                 
                           </div>
