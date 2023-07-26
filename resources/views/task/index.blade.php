@@ -24,7 +24,7 @@
                             <td class="pl-2">{{$task->title}}</td>
                             <td>
                             @if ($task->taskable_type == 'App\Models\Person')
-                                {{ $task->taskable->firstname }}
+                                {{ $task->taskable->firstname }} {{ $task->taskable->lastname }}
                             @else ($task->taskable_type == 'App\Models\Business')
                                 {{ $task->taskable->business_name }}
                             @endif
