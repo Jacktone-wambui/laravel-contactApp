@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use App\Models\Business;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Person>
@@ -16,11 +17,13 @@ class PersonFactory extends Factory
      */
     public function definition(): array
     {
+        $business=Business::pluck('id');
         return [
             'firstname' => fake()->firstName(),
             'lastname' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->phoneNumber(), 
+            'business_id'=>fake()->randomElement($business),
         ];
     }
 }
