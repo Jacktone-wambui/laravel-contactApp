@@ -13,5 +13,6 @@ class TaskSeeder extends Seeder
     public function run(): void
     {
         //
+        \App\Models\Task::factory(80)->create();
     }
 }

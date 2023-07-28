@@ -23,7 +23,7 @@ class PersonFactory extends Factory
             'lastname' => fake()->lastName(),
             'email' => fake()->unique()->safeEmail(),
             'phone' => fake()->phoneNumber(), 
-            'business_id'=>fake()->randomElement($business),
+            'business_id'=>fake()->boolean(50) ? fake()->randomElement($business):NULL,
         ];
     }
 }
