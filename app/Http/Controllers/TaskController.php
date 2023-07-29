@@ -15,7 +15,7 @@ class TaskController extends Controller
     public function index()
     {
         //
-        return view('task.index')->with('task',Task::open()->get());
+        return view('task.index')->with('task',Task::open()->paginate(10));
     }
 
     

@@ -13,12 +13,10 @@ class BusinessController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {
-        //
-        $business = Business::with('people')->get();
-        return view('business.index')->with('business',$business);
-    }
-
+{
+    $businesses = Business::with('people')->paginate(10);
+    return view('business.index', ['businesses' => $businesses]);
+}
     /**
      * Show the form for creating a new resource.
      */
