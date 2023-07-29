@@ -24,7 +24,7 @@ class TaskFactory extends Factory
             'description' => fake()->paragraph(),
             'status' => fake()->randomElement(['open','completed']), 
             'taskable_id'=>fake()->numberBetween(1,70),
-            'taskable_type' => fake()->randomElement(['App\Models\Business','pp\Models\Person']), 
+            'taskable_type' => fake()->randomElement(['App\Models\Business','App\Models\Person']), 
         ];
     }
 }
