@@ -6,6 +6,7 @@ use App\Models\Task;
 use App\Models\user;
 use App\Mail\TaskCreated;
 use Illuminate\Support\Facades\Mail;
+use  Illuminate\Contracts\Mail\Mailable;
 
 class TaskObserver
 {
