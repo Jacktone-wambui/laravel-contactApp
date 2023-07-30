@@ -19,7 +19,7 @@
                         </tr>
                       </thead>
                              <tbody>
-                      @foreach($task as $task)
+                      @foreach($tasks as $task)
                           <tr>
                             <td class="pl-2">{{$task->title}}</td>
                             <td>

@@ -18,7 +18,8 @@ class TaskFactory extends Factory
      */
     public function definition(): array
     {
-      
+      $business=Business::pluck('id');
+      $person=Person::pluck('id');
         return [
             'title' => fake()->sentence(),
             'description' => fake()->paragraph(),
